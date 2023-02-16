@@ -1,7 +1,5 @@
 # Group 43 - {What Makes The Fastest Growing Companies in Europe}
 
-- Your title can change over time.
-
 ## Milestones
 
 Details for Milestone are available on Canvas (left sidebar, Course Project).
@@ -12,7 +10,7 @@ Our group hopes to use the data from the top thousand fastest-growing companies 
 
 ## Describe your dataset in about 150-200 words
 
-This dataset is collected by the Financial Times, which analyzes the top 1000 fastest-growing companies in Europe. Statista chose the companies with the perspective of analyzing the impact of COVID during 2020. Regarding data collection, the FT advertised the project online and invited CEOs and CFOs of companies to certify figures from company databases and alternative public sources. The minimum requirements that companies had to participate in included minimum revenue figures, non-subsidiary status, and not excessively volatile share prices. The country is from the FT’s list of chosen European countries.
+This dataset is collected by the Financial Times, which analyzes the top 1000 fastest-growing companies in Europe. Statista chose the companies with the perspective of analyzing the impact of COVID during 2020. Regarding data collection, the FT advertised the project online and invited CEOs and CFOs of the previously mentioned companies to certify figures from company databases and alternative public sources. The minimum requirements for the companies to participate in the dataset included minimum revenue figures, non-subsidiary status, and not excessively volatile share prices and finally for the country to be from the FT’s list of chosen European countries.
 
 As such, the dataset features the following categories:
 * Company name and founding year
@@ -39,7 +37,9 @@ As such, the dataset features the following categories:
 
 ## References
 
-{Add your stuff here}
+-Where the dataset was taken from: Lai, N. T. C. (2022, February 13). Top 1000 fastest growing companies in Europe. Kaggle. Retrieved February 1, 2023, from https://www.kaggle.com/datasets/nguyenthicamlai/top-1000-fastest-growing-companies-in-europe
+
+-Information on the dataset : Kelly, M. (2022, March 1). FT 1000: The Sixth annual list of Europe's fastest-growing companies. Financial Times. Retrieved February 5, 2023, from https://www.ft.com/ft1000-2022 
 
 
 
