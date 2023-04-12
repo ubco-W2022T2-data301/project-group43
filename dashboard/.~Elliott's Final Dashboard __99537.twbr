@@ -14,6 +14,7 @@
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
   </document-format-change-manifest>
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
@@ -341,10 +342,7 @@
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]'>
-            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='level-members' level='[none:Country:nk]' />
-              <groupfilter function='member' level='[none:Country:nk]' member='%null%' />
-            </groupfilter>
+            <groupfilter function='member' level='[none:Country:nk]' member='&quot;Germany&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[Exclusions (Annual Growth Rate (%),Change in emlpoyment 2017-2020 (%))]</column>
@@ -378,11 +376,19 @@
             <datasource caption='Elliott_small' name='federated.0w0yokd0dvg30r1f7dbhd19hwk5f' />
           </datasources>
           <datasource-dependencies datasource='federated.0w0yokd0dvg30r1f7dbhd19hwk5f'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='integer' name='[Employees2017]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Revenue2017]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Employees2017]' derivation='None' name='[none:Employees2017:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Revenue2017]' derivation='None' name='[none:Revenue2017:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]'>
+            <groupfilter function='level-members' level='[none:Country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style />
@@ -407,11 +413,22 @@
             <datasource caption='Elliott_small' name='federated.0w0yokd0dvg30r1f7dbhd19hwk5f' />
           </datasources>
           <datasource-dependencies datasource='federated.0w0yokd0dvg30r1f7dbhd19hwk5f'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='integer' name='[Employees2020]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Revenue2020]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Employees2020]' derivation='None' name='[none:Employees2020:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Revenue2020]' derivation='None' name='[none:Revenue2020:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Country:nk]' />
+              <groupfilter function='member' level='[none:Country:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style />
@@ -484,6 +501,26 @@
       </table>
       <simple-id uuid='{2D1BC067-4ADA-4248-B015-7A1CF7E14E83}' />
     </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{DE1E913A-44B3-42BD-9C78-B09C689404B6}' />
+    </worksheet>
     <worksheet name='Small Buisness Growth across European Countries '>
       <table>
         <view>
@@ -544,11 +581,18 @@
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Fatest Growing Small Buisnesses in Europe'>
       <style />
       <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='Elliott_small' name='federated.0w0yokd0dvg30r1f7dbhd19hwk5f' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0w0yokd0dvg30r1f7dbhd19hwk5f'>
+        <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+        <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98020' id='8' param='horz' type-v2='layout-flow' w='98698' x='651' y='990'>
-            <zone h='98020' id='6' type-v2='layout-basic' w='96094' x='651' y='990'>
-              <zone h='49010' id='3' name='Small Buisness Growth across European Countries ' w='57608' x='651' y='990'>
+          <zone h='79552' id='8' param='horz' type-v2='layout-flow' w='98680' x='660' y='19254'>
+            <zone h='79552' id='6' type-v2='layout-basic' w='89776' x='660' y='19254'>
+              <zone h='39777' id='3' name='Small Buisness Growth across European Countries ' w='53819' x='660' y='19254'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -556,7 +600,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49010' id='5' name='Revenue by Country' w='55574' x='651' y='50000'>
+              <zone h='39775' id='5' name='Revenue by Country' w='49299' x='660' y='59031'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -564,7 +608,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49010' id='10' name='Revenue and Employment 2017' w='40520' x='56225' y='50000'>
+              <zone h='39775' id='10' name='Revenue and Employment 2017' w='40477' x='49959' y='59031'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -572,17 +616,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49010' id='11' name='Growth Rates Scatterplot' w='38486' x='58259' y='990'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-            </zone>
-            <zone fixed-size='32' h='98020' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='2604' x='96745' y='990'>
-              <zone h='8044' id='9' name='Revenue by Country' pane-specification-id='0' param='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[sum:Revenue2020:qk]' type-v2='color' w='2604' x='96745' y='990'>
+              <zone h='39777' id='11' name='Growth Rates Scatterplot' w='35957' x='54479' y='19254'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -591,6 +625,32 @@
                 </zone-style>
               </zone>
             </zone>
+            <zone fixed-size='108' h='79552' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='8904' x='90436' y='19254'>
+              <zone h='9701' id='9' name='Revenue by Country' pane-specification-id='0' param='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[sum:Revenue2020:qk]' type-v2='color' w='8904' x='90436' y='19254'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='18060' id='13' name='Revenue and Employment 2017' param='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]' type-v2='filter' values='database' w='85490' x='660' y='1194'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='18060' id='12' name='Growth Rates Scatterplot' param='[federated.0w0yokd0dvg30r1f7dbhd19hwk5f].[none:Country:nk]' type-v2='filter' values='database' w='13190' x='86150' y='1194'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
           </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -717,7 +777,7 @@
       </cards>
       <simple-id uuid='{DCD38874-4DFF-4681-9106-C5D68331B6EB}' />
     </window>
-    <window class='worksheet' maximized='true' name='Growth Rates Scatterplot'>
+    <window class='worksheet' name='Growth Rates Scatterplot'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -740,7 +800,30 @@
       </cards>
       <simple-id uuid='{D2E55A3B-4651-4848-949B-1810241AE610}' />
     </window>
-    <window class='dashboard' name='Fatest Growing Small Buisnesses in Europe'>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{79095437-F0E0-43D0-BC9A-8F679A3E6FF0}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Fatest Growing Small Buisnesses in Europe'>
       <viewpoints>
         <viewpoint name='Growth Rates Scatterplot'>
           <zoom type='entire-view' />
@@ -751,7 +834,7 @@
         <viewpoint name='Revenue by Country' />
         <viewpoint name='Small Buisness Growth across European Countries ' />
       </viewpoints>
-      <active id='-1' />
+      <active id='12' />
       <simple-id uuid='{279D8CAC-8AAC-4E33-B362-9BCBF5F7A79E}' />
     </window>
   </windows>
