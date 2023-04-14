@@ -17,13 +17,13 @@ After discovering the relationship above, I created another hexbin relating the 
 We analyzed data from the top 1000 companies in Europe and I amed to find out which of the sectors that these comapnies come from are the fastest growing. From the parameters given to me I wanted to find out which of the sectors grow the fastest.
 
 However while doing my EDA I realized I that my first question was easily answered with one of the first few graphs I made in my EDA. Here is the graph, 
-![CAGR_VS_Sector](http://localhost:8888/lab/tree/images/Sector%20vs%20CAGR.png)
+![CAGR_VS_Sector](https://github.com/ubco-W2022T2-data301/project-group43/blob/main/images/Sector%20vs%20CAGR.png)
 
 I first wrangled my data and cleaned it up in a manner that leaves my with only relevant data that I needed to answer my research question, and added columns with data pulled from the other columns relevant to asnwering my questions. I added the columns "Change in Revenue" and "Change % in employees"
 
-I created a Regplot to study the relationship between CAGR of a Sector and the change in revenue of all business in that particular sector. I found out that their was a very strong positve linear relationship between the two which tells me that for a particular sector to grow, increase in revenues of a particular sector is crucial. Here is the graph, ![CAGR VS Revenue Change](http://localhost:8888/lab/tree/images/CAGR%20vs%20Change%20%25%20in%20Revenue.png)
+I created a Regplot to study the relationship between CAGR of a Sector and the change in revenue of all business in that particular sector. I found out that their was a very strong positve linear relationship between the two which tells me that for a particular sector to grow, increase in revenues of a particular sector is crucial. Here is the graph, ![CAGR VS Revenue Change](https://github.com/ubco-W2022T2-data301/project-group43/blob/main/images/CAGR%20vs%20Change%20%25%20in%20Revenue.png)
 
-I then created another Regplot to study the relationship between Change % of employees in businesses part of a particular sector and the growth rate of that particualr sector and also saw a strong positive linear relationship. So clearly a positve % increase in the number of employees in businesses in a particular sector is directly related to a higher CAGR. Here is the graph, ![CAGR VS Change % in Employees](http://localhost:8888/lab/tree/images/CAGR%20vs%20Change%20in%20No.%20Of%20Employees.png)
+I then created another Regplot to study the relationship between Change % of employees in businesses part of a particular sector and the growth rate of that particualr sector and also saw a strong positive linear relationship. So clearly a positve % increase in the number of employees in businesses in a particular sector is directly related to a higher CAGR. Here is the graph, ![CAGR VS Change % in Employees](https://github.com/ubco-W2022T2-data301/project-group43/blob/main/images/CAGR_vs._%23employees.png)
 
 **Conclusion**
 
